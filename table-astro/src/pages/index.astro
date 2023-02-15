@@ -1,18 +1,15 @@
 ---
-import pokemon from "../data";
+import Home from "../components/Home";
 
-import Pokemon from "../components/Pokemon";
-
-import "../global.css"
+import "../global.css";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+  </head>
   <body>
-    <div class="container">
-      <h1>Pokemon</h1>
-      <table>{pokemon.map((pokemon) => (<tr><td><Pokemon client:load>{pokemon.name}</Pokemon></td><td>{pokemon.type.join(", ")}</td><td>{pokemon.hp}</td><td>{pokemon.attack}</td><td>{pokemon.defense}</td><td>{pokemon.special_attack}</td><td>{pokemon.special_defense}</td><td>{pokemon.speed}</td></tr>))}</table>
-      <template id="pokemon">{JSON.stringify(pokemon)}</template>
-    </div>
+    <Home client:idle />
   </body>
 </html>
