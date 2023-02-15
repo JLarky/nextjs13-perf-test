@@ -12,8 +12,11 @@ import "../global.css";
   </head>
   <body>
     <Home />
-    <script data-pokemon={JSON.stringify(pokemon)}>
-      const pokemon = JSON.parse(document.currentScript.dataset.pokemon);
+    <template>{JSON.stringify(pokemon)}</template>
+    <script>
+      const pokemon = JSON.parse(
+        document.querySelector("template").content.textContent
+      );
       document.addEventListener("click", (e) => {
         if (e.target.tagName !== "A" || e.target.getAttribute("href") !== "#") {
           return;
