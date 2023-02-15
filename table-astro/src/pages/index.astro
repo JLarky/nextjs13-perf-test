@@ -1,5 +1,6 @@
 ---
 import Home from "../components/Home";
+import pokemon from "../data.json";
 
 import "../global.css";
 ---
@@ -10,6 +11,16 @@ import "../global.css";
     <meta charset="utf-8" />
   </head>
   <body>
-    <Home client:idle />
+    <Home />
+    <script data-pokemon={JSON.stringify(pokemon)}>
+      const pokemon = JSON.parse(document.currentScript.dataset.pokemon);
+      document.addEventListener("click", (e) => {
+        if (e.target.tagName !== "A" || e.target.getAttribute("href") !== "#") {
+          return;
+        }
+        const name = e.target.textContent;
+        alert(JSON.stringify(pokemon.find((p) => p.name === name)));
+      });
+    </script>
   </body>
 </html>
