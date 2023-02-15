@@ -11,7 +11,7 @@ import "../global.css"
   <body>
     <div class="container">
       <h1>Pokemon</h1>
-      <table>{pokemon.map((pokemon) => (<tr><td><Pokemon name={pokemon.name} client:load>{pokemon.name}</Pokemon></td><td>{pokemon.type.join(", ")}</td><td>{pokemon.hp}</td><td>{pokemon.attack}</td><td>{pokemon.defense}</td><td>{pokemon.special_attack}</td><td>{pokemon.special_defense}</td><td>{pokemon.speed}</td></tr>))}</table>
+      <table>{pokemon.map((pokemon) => (<tr><td><Pokemon id={pokemon.id} client:load>{pokemon.name}</Pokemon></td><td>{pokemon.type.join(", ")}</td><td>{pokemon.hp}</td><td>{pokemon.attack}</td><td>{pokemon.defense}</td><td>{pokemon.special_attack}</td><td>{pokemon.special_defense}</td><td>{pokemon.speed}</td></tr>))}</table>
     </div>
     <script
       id="__ASTRO_DATA__"
